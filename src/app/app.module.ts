@@ -9,6 +9,9 @@ import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import {LayoutModule} from './layout/layout.module';
 import {MaterialComponentsModule} from './config/material/material.module';
+import {AngularFireModule} from 'angularfire2';
+import {AngularFirestoreModule} from 'angularfire2/firestore';
+import { AngularFireStorageModule} from 'angularfire2/storage';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,8 @@ import {MaterialComponentsModule} from './config/material/material.module';
     AppRoutingModule,
     LayoutModule,
     MaterialComponentsModule,
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
   bootstrap: [AppComponent]
