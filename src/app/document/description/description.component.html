@@ -1,0 +1,15 @@
+<div class="container color dark">
+  <div class="col">
+    <p>Add new description:</p>
+  </div>
+  <div class="col">
+    <form>
+      <input type="text" name="value" placeholder="Description" [(ngModel)]= "value">
+      <br>
+      <span>{{value}}</span>
+      <br>
+      <input type="submit" class="btn" [value]="btnDescription" (click)="addValue()">
+    </form>
+
+  </div>
+</div>

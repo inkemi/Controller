@@ -12,7 +12,9 @@ export class AppLayoutComponent implements OnDestroy {
   routes = [
     {route: '/', title: 'Home', icon: 'home'},
     {route: '/folders', title: 'Folders', icon: 'folder'},
-    {route: '/users', title: 'Users', icon: 'face'}
+    {route: '/users', title: 'Users', icon: 'face'},
+    {route: '/add', title: 'Add', icon: 'description'},
+    {route: '/login', title: 'Login', icon: 'lock open'}
   ];
   navBarOpenL = true;
   navBarOpenR = true;

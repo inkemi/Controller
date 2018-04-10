@@ -12,6 +12,8 @@ import {MaterialComponentsModule} from './config/material/material.module';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
 import { AngularFireStorageModule} from 'angularfire2/storage';
+import {AuthModule} from './auth/auth.module';
+import {DocumentModule} from './document/document.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,11 @@ import { AngularFireStorageModule} from 'angularfire2/storage';
     BrowserModule,
     AppRoutingModule,
     LayoutModule,
+    AuthModule,
+    DocumentModule,
     MaterialComponentsModule,
+    AngularFireStorageModule,
+    AngularFirestoreModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     AngularFireModule.initializeApp(environment.firebase)
   ],
