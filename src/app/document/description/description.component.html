@@ -1,15 +1,32 @@
 <div class="container color dark">
+  <input type="file" (change)="uploadFile($event)" accept=".png,.jpg, .gif" />
+  <div>{{ uploadPercent | async }}</div>
   <div class="col">
     <p>Add new description:</p>
   </div>
   <div class="col">
     <form>
-      <input type="text" name="value" placeholder="Description" [(ngModel)]= "value">
+      <input type="text" name="value" placeholder="Description" [(ngModel)]= "description1">
       <br>
-      <span>{{value}}</span>
+      <input type="text" name="value" placeholder="Description" [(ngModel)]= "description2">
       <br>
-      <input type="submit" class="btn" [value]="btnDescription" (click)="addValue()">
+      <br>
+      <input type="submit" class="btn" [value]="btnDescription" (click)="addDescription()">
     </form>
-
   </div>
+</div>
+
+  <div *ngFor="let demo of demos | async" >
+    <img height="100px" [src]="demo.demoImage">
+    <ul (click)="onDemoSelect(demo)">
+    <li>{{ demo.description1 }}</li>
+    <li>{{ demo.description2 }}</li>
+  </ul>
+</div>
+
+<div *ngIf="downloadURL">
+  <img [src]="downloadURL | async" />
+</div>
+<div *ngIf="onSelect">
+  {{ demoU }}
 </div>
